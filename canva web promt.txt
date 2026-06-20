@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+ <head><script src="/_sdk/telemetry_sdk.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LuminaDX</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Fraunces:wght@600;700&amp;display=swap" rel="stylesheet">
+  <style>
+        body { font-family: 'DM Sans', sans-serif; }
+        h1, h2, h3 { font-family: 'Fraunces', serif; }
+        html { scroll-behavior: smooth; }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #00d4aa; transition: width 0.3s; }
+        .nav-link:hover::after { width: 100%; }
+        .upload-zone { border: 2px dashed #334155; transition: all 0.3s; }
+        .upload-zone.dragover { border-color: #00d4aa; background: rgba(0,212,170,0.05); }
+        @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+        .fade-up { animation: fadeUp 0.6s ease forwards; }
+    </style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/resizing_sdk.js" type="text/javascript"></script>
+ </head>
+ <body data-template-id="__page-root" class="w-full min-h-screen text-gray-100"><!-- Nav -->
+  <nav class="fixed top-0 w-full z-50 bg-slate-900/95 backdrop-blur border-b border-slate-800">
+   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><a href="#home" data-template-id="nav-logo" class="canva-text text-xl font-bold tracking-tight"></a> <button id="mobile-toggle" class="md:hidden text-white"><i data-lucide="menu" class="w-6 h-6"></i></button>
+    <div id="nav-links" class="hidden md:flex gap-6 text-sm"><a href="#home" class="nav-link hover:text-emerald-400">Home</a> <a href="#about" class="nav-link hover:text-emerald-400">About</a> <a href="#services" class="nav-link hover:text-emerald-400">Services</a> <a href="#ai-analysis" class="nav-link hover:text-emerald-400">AI Analysis</a> <a href="#upload" class="nav-link hover:text-emerald-400">Upload</a> <a href="#radiologists" class="nav-link hover:text-emerald-400">Radiologists</a> <a href="#pricing" class="nav-link hover:text-emerald-400">Pricing</a> <a href="#contact" class="nav-link hover:text-emerald-400">Contact</a>
+    </div>
+   </div>
+  </nav><!-- Hero -->
+  <header id="home" class="relative w-full" style="min-height: calc(100 * min(var(--vh, 1vh), 1vh));"><img data-template-id="hero-img" class="canva-image absolute inset-0 w-full h-full object-cover opacity-40" loading="lazy">
+   <div class="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/50 to-slate-900"></div>
+   <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 pt-32 pb-20" style="min-height: calc(100 * min(var(--vh, 1vh), 1vh));">
+    <h1 data-template-id="hero-title" class="canva-text text-5xl md:text-7xl font-bold mb-6 fade-up"></h1>
+    <p data-template-id="hero-subtitle" class="canva-text text-lg md:text-xl max-w-2xl mb-8 opacity-80 fade-up" style="animation-delay:0.2s"></p>
+    <div class="flex gap-4 fade-up" style="animation-delay:0.4s"><a href="#upload" data-template-id="hero-cta" class="canva-button px-8 py-3 rounded-full font-medium transition hover:scale-105"></a> <a href="#about" data-template-id="hero-cta2" class="canva-button px-8 py-3 rounded-full font-medium border border-white/30 hover:bg-white/10 transition"></a>
+    </div>
+   </div>
+  </header>
+  <main><!-- About -->
+   <section id="about" class="py-24 px-6">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+     <div>
+      <h2 data-template-id="about-title" class="canva-text text-4xl font-bold mb-6"></h2>
+      <p data-template-id="about-desc" class="canva-text leading-relaxed opacity-80 mb-4"></p>
+      <p data-template-id="about-desc2" class="canva-text leading-relaxed opacity-80"></p>
+     </div><img data-template-id="about-img" class="canva-image rounded-2xl w-full h-80 object-cover shadow-2xl" loading="lazy">
+    </div>
+   </section><!-- Services -->
+   <section id="services" data-template-id="services-bg" class="canva-section py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+     <h2 data-template-id="services-title" class="canva-text text-4xl font-bold text-center mb-16"></h2>
+     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div data-template-id="svc-1" class="canva-card p-6 rounded-2xl text-center">
+       <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-emerald-500/20 flex items-center justify-center">
+        <i data-lucide="upload-cloud" class="w-7 h-7 text-emerald-400"></i>
+       </div>
+       <h3 data-template-id="svc-1-title" class="canva-text text-lg font-bold mb-2"></h3>
+       <p data-template-id="svc-1-desc" class="canva-text text-sm opacity-70"></p>
+      </div>
+      <div data-template-id="svc-2" class="canva-card p-6 rounded-2xl text-center">
+       <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-blue-500/20 flex items-center justify-center">
+        <i data-lucide="brain" class="w-7 h-7 text-blue-400"></i>
+       </div>
+       <h3 data-template-id="svc-2-title" class="canva-text text-lg font-bold mb-2"></h3>
+       <p data-template-id="svc-2-desc" class="canva-text text-sm opacity-70"></p>
+      </div>
+      <div data-template-id="svc-3" class="canva-card p-6 rounded-2xl text-center">
+       <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-purple-500/20 flex items-center justify-center">
+        <i data-lucide="shield-check" class="w-7 h-7 text-purple-400"></i>
+       </div>
+       <h3 data-template-id="svc-3-title" class="canva-text text-lg font-bold mb-2"></h3>
+       <p data-template-id="svc-3-desc" class="canva-text text-sm opacity-70"></p>
+      </div>
+      <div data-template-id="svc-4" class="canva-card p-6 rounded-2xl text-center">
+       <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-amber-500/20 flex items-center justify-center">
+        <i data-lucide="users" class="w-7 h-7 text-amber-400"></i>
+       </div>
+       <h3 data-template-id="svc-4-title" class="canva-text text-lg font-bold mb-2"></h3>
+       <p data-template-id="svc-4-desc" class="canva-text text-sm opacity-70"></p>
+      </div>
+     </div>
+    </div>
+   </section><!-- AI Analysis -->
+   <section id="ai-analysis" class="py-24 px-6">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center"><img data-template-id="ai-img" class="canva-image rounded-2xl w-full h-80 object-cover shadow-2xl" loading="lazy">
+     <div>
+      <h2 data-template-id="ai-title" class="canva-text text-4xl font-bold mb-6"></h2>
+      <p data-template-id="ai-desc" class="canva-text leading-relaxed opacity-80 mb-6"></p>
+      <ul class="space-y-3">
+       <li class="flex items-center gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-emerald-400"></i><span data-template-id="ai-feat-1" class="canva-text"></span></li>
+       <li class="flex items-center gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-emerald-400"></i><span data-template-id="ai-feat-2" class="canva-text"></span></li>
+       <li class="flex items-center gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-emerald-400"></i><span data-template-id="ai-feat-3" class="canva-text"></span></li>
+      </ul>
+     </div>
+    </div>
+   </section><!-- Upload Cases -->
+   <section id="upload" data-template-id="upload-bg" class="canva-section py-24 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+     <h2 data-template-id="upload-title" class="canva-text text-4xl font-bold mb-4"></h2>
+     <p data-template-id="upload-desc" class="canva-text opacity-70 mb-10"></p>
+     <div id="drop-zone" class="upload-zone rounded-2xl p-16 flex flex-col items-center gap-4 cursor-pointer"><i data-lucide="file-up" class="w-16 h-16 text-slate-400"></i>
+      <p data-template-id="upload-prompt" class="canva-text text-lg"></p>
+      <p data-template-id="upload-formats" class="canva-text text-sm opacity-50"></p>
+     </div>
+     <p id="upload-success" class="hidden mt-4 text-emerald-400 font-medium">✓ File selected — ready for processing (demo)</p>
+    </div>
+   </section><!-- Find Radiologists -->
+   <section id="radiologists" class="py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+     <h2 data-template-id="rad-title" class="canva-text text-4xl font-bold text-center mb-16"></h2>
+     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div data-template-id="rad-1-card" class="canva-card rounded-2xl overflow-hidden text-center p-6"><img data-template-id="rad-1-img" class="canva-image w-24 h-24 rounded-full mx-auto mb-4 object-cover" loading="lazy">
+       <h3 data-template-id="rad-1-name" class="canva-text font-bold mb-1"></h3>
+       <p data-template-id="rad-1-spec" class="canva-text text-sm opacity-60"></p>
+      </div>
+      <div data-template-id="rad-2-card" class="canva-card rounded-2xl overflow-hidden text-center p-6"><img data-template-id="rad-2-img" class="canva-image w-24 h-24 rounded-full mx-auto mb-4 object-cover" loading="lazy">
+       <h3 data-template-id="rad-2-name" class="canva-text font-bold mb-1"></h3>
+       <p data-template-id="rad-2-spec" class="canva-text text-sm opacity-60"></p>
+      </div>
+      <div data-template-id="rad-3-card" class="canva-card rounded-2xl overflow-hidden text-center p-6"><img data-template-id="rad-3-img" class="canva-image w-24 h-24 rounded-full mx-auto mb-4 object-cover" loading="lazy">
+       <h3 data-template-id="rad-3-name" class="canva-text font-bold mb-1"></h3>
+       <p data-template-id="rad-3-spec" class="canva-text text-sm opacity-60"></p>
+      </div>
+      <div data-template-id="rad-4-card" class="canva-card rounded-2xl overflow-hidden text-center p-6"><img data-template-id="rad-4-img" class="canva-image w-24 h-24 rounded-full mx-auto mb-4 object-cover" loading="lazy">
+       <h3 data-template-id="rad-4-name" class="canva-text font-bold mb-1"></h3>
+       <p data-template-id="rad-4-spec" class="canva-text text-sm opacity-60"></p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Pricing -->
+   <section id="pricing" data-template-id="pricing-bg" class="canva-section py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+     <h2 data-template-id="pricing-title" class="canva-text text-4xl font-bold text-center mb-4"></h2>
+     <p data-template-id="pricing-subtitle" class="canva-text text-center opacity-70 mb-16"></p>
+     <div class="grid md:grid-cols-3 gap-8">
+      <div data-template-id="plan-1" class="canva-card rounded-2xl p-8">
+       <h3 data-template-id="plan-1-name" class="canva-text text-xl font-bold mb-2"></h3>
+       <p data-template-id="plan-1-price" class="canva-text text-3xl font-bold mb-1"></p>
+       <p data-template-id="plan-1-commission" class="canva-text text-sm opacity-60 mb-6"></p>
+       <ul class="space-y-2 text-sm opacity-80 mb-8">
+        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><span data-template-id="plan-1-f1" class="canva-text"></span></li>
+        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><span data-template-id="plan-1-f2" class="canva-text"></span></li>
+        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><span data-template-id="plan-1-f3" class="canva-text"></span></li>
+       </ul><button data-template-id="plan-1-btn" class="canva-button w-full py-3 rounded-full font-medium transition hover:scale-105"></button>
+      </div>
+      <div data-template-id="plan-2" class="canva-card rounded-2xl p-8 ring-2 ring-emerald-400 relative"><span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full">POPULAR</span>
+       <h3 data-template-id="plan-2-name" class="canva-text text-xl font-bold mb-2"></h3>
+       <p data-template-id="plan-2-price" class="canva-text text-3xl font-bold mb-1"></p>
+       <p data-template-id="plan-2-commission" class="canva-text text-sm opacity-60 mb-6"></p>
+       <ul class="space-y-2 text-sm opacity-80 mb-8">
+        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><span data-template-id="plan-2-f1" class="canva-text"></span></li>
+        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><span data-template-id="plan-2-f2" class="canva-text"></span></li>
+        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><span data-template-id="plan-2-f3" class="canva-text"></span></li>
+        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><span data-template-id="plan-2-f4" class="canva-text"></span></li>
+       </ul><button data-template-id="plan-2-btn" class="canva-button w-full py-3 rounded-full font-medium transition hover:scale-105"></button>
+      </div>
+      <div data-template-id="plan-3" class="canva-card rounded-2xl p-8">
+       <h3 data-template-id="plan-3-name" class="canva-text text-xl font-bold mb-2"></h3>
+       <p data-template-id="plan-3-price" class="canva-text text-3xl font-bold mb-1"></p>
+       <p data-template-id="plan-3-commission" class="canva-text text-sm opacity-60 mb-6"></p>
+       <ul class="space-y-2 text-sm opacity-80 mb-8">
+        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><span data-template-id="plan-3-f1" class="canva-text"></span></li>
+        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><span data-template-id="plan-3-f2" class="canva-text"></span></li>
+        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><span data-template-id="plan-3-f3" class="canva-text"></span></li>
+        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><span data-template-id="plan-3-f4" class="canva-text"></span></li>
+       </ul><button data-template-id="plan-3-btn" class="canva-button w-full py-3 rounded-full font-medium transition hover:scale-105"></button>
+      </div>
+     </div>
+    </div>
+   </section><!-- Contact -->
+   <section id="contact" class="py-24 px-6">
+    <div class="max-w-2xl mx-auto">
+     <h2 data-template-id="contact-title" class="canva-text text-4xl font-bold text-center mb-4"></h2>
+     <p data-template-id="contact-desc" class="canva-text text-center opacity-70 mb-12"></p>
+     <form id="contact-form" class="space-y-6">
+      <div class="grid md:grid-cols-2 gap-6">
+       <div><label data-template-id="contact-name-label" for="c-name" class="canva-text block text-sm font-medium mb-2"></label> <input id="c-name" type="text" class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 focus:border-emerald-400 focus:outline-none text-white">
+       </div>
+       <div><label data-template-id="contact-email-label" for="c-email" class="canva-text block text-sm font-medium mb-2"></label> <input id="c-email" type="email" class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 focus:border-emerald-400 focus:outline-none text-white">
+       </div>
+      </div>
+      <div><label data-template-id="contact-msg-label" for="c-msg" class="canva-text block text-sm font-medium mb-2"></label> <textarea id="c-msg" rows="5" class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 focus:border-emerald-400 focus:outline-none text-white resize-none"></textarea>
+      </div><button data-template-id="contact-btn" type="submit" class="canva-button w-full py-3 rounded-full font-medium transition hover:scale-105"></button>
+     </form>
+     <p id="form-success" class="hidden mt-4 text-center text-emerald-400 font-medium">✓ Message sent successfully!</p>
+    </div>
+   </section>
+  </main><!-- Footer -->
+  <footer data-template-id="footer-bg" class="canva-footer py-12 px-6 border-t border-slate-800">
+   <div class="max-w-7xl mx-auto text-center">
+    <p data-template-id="footer-text" class="canva-text opacity-60 text-sm"></p>
+   </div>
+  </footer>
+  <script src="/_sdk/editing_sdk.js"></script>
+  <script>
+        lucide.createIcons();
+
+        // Mobile nav
+        document.getElementById('mobile-toggle').addEventListener('click', () => {
+            const nav = document.getElementById('nav-links');
+            nav.classList.toggle('hidden');
+            nav.classList.toggle('flex');
+            nav.classList.toggle('flex-col');
+            nav.classList.toggle('absolute');
+            nav.classList.toggle('top-full');
+            nav.classList.toggle('left-0');
+            nav.classList.toggle('w-full');
+            nav.classList.toggle('bg-slate-900');
+            nav.classList.toggle('p-6');
+            nav.classList.toggle('gap-4');
+        });
+
+        // Upload zone demo
+        const dropZone = document.getElementById('drop-zone');
+        dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('dragover'); });
+        dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+        dropZone.addEventListener('drop', e => { e.preventDefault(); dropZone.classList.remove('dragover'); document.getElementById('upload-success').classList.remove('hidden'); });
+        dropZone.addEventListener('click', () => { const inp = document.createElement('input'); inp.type='file'; inp.accept='.dcm,.dicom,.zip'; inp.onchange=()=>document.getElementById('upload-success').classList.remove('hidden'); inp.click(); });
+
+        // Contact form
+        document.getElementById('contact-form').addEventListener('submit', e => {
+            e.preventDefault();
+            document.getElementById('contact-form').classList.add('hidden');
+            document.getElementById('form-success').classList.remove('hidden');
+        });
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0ec64ca704d2e35',t:'MTc4MTk3NTQ5Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
